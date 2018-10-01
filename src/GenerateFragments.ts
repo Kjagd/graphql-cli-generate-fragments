@@ -345,7 +345,7 @@ ${fragment}`
   }
 
   private printField(
-    fieldName,
+    fieldName: string,
     field,
     ast: GraphQLSchema,
     fragmentType = this.fragmentType.DEFAULT,
@@ -376,7 +376,7 @@ ${fragment}`
         (field.type.name &&
           (ast.getType(field.type.name.value) as GraphQLNamedType).constructor.name) ||
         null;
-      if (constructorName === null) {
+      while (constructorName === null && field != null) {
         field = (field.type && field.type) || null;
         constructorName =
           (field.type.name &&
@@ -393,7 +393,7 @@ ${fragment}`
     }
 
     if (constructorName === "GraphQLObjectType") {
-      // if (fragmentType === this.fragmentType.NO_RELATIONS) return null;
+      if (fragmentType === this.fragmentType.NO_RELATIONS) return null;
       let typeName = null;
       // if(field.name !== undefined)
       typeName =
