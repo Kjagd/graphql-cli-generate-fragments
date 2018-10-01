@@ -65,6 +65,15 @@
       "additions": 1,
       "deletions": 1,
       "hireable": true
+    },
+    {
+      "name": "Kjagd",
+      "email": null,
+      "url": "https://github.com/kjagd",
+      "contributions": 1,
+      "additions": 1,
+      "deletions": 1,
+      "hireable": false
     }
   ]
 }
