@@ -188,7 +188,7 @@ var GenerateFragments = /** @class */ (function () {
                 : true;
         })
             .sort(function (a, b) {
-            return ast.getType(a).constructor.name < ast.getType(b).constructor.name
+            return ast.getType(a).name < ast.getType(b).name
                 ? -1
                 : 1;
         });

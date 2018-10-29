@@ -207,7 +207,7 @@ export class GenerateFragments {
       )
       .sort(
         (a, b) =>
-          (ast.getType(a) as GraphQLNamedType).constructor.name < (ast.getType(b) as GraphQLNamedType).constructor.name
+          (ast.getType(a) as GraphQLNamedType).name < (ast.getType(b) as GraphQLNamedType).name
             ? -1
             : 1
       );
