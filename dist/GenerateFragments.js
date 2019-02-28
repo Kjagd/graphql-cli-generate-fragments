@@ -248,7 +248,7 @@ var GenerateFragments = /** @class */ (function () {
                 .join("") + "\n" + noRelationsFragments
                 .map(function (_a) {
                 var name = _a.name, fragment = _a.fragment;
-                return fragment ? "\nexport const " + name + _this.fragmentType.NO_RELATIONS + "Fragment = gql`\n" + fragment + "`\n" : '';
+                return fragment.trim() ? "\nexport const " + name + _this.fragmentType.NO_RELATIONS + "Fragment = gql`\n" + fragment + "`\n" : '';
             })
                 .join("") + "\n" + deepFragments
                 .map(function (_a) {

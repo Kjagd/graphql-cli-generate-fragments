@@ -296,7 +296,7 @@ ${fragment}\`
         .join("")}
 ${noRelationsFragments
         .map(
-          ({ name, fragment }) => fragment ? `
+          ({ name, fragment }) => fragment.trim() ? `
 export const ${name}${this.fragmentType.NO_RELATIONS}Fragment = gql\`
 ${fragment}\`
 ` : ''
