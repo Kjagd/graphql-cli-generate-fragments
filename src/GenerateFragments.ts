@@ -289,21 +289,24 @@ import gql from 'graphql-tag'
 ${standardFragments
         .map(
           ({ name, fragment }) => `
-export const ${name}Fragment = gql\`${fragment}\`
+export const ${name}Fragment = gql\`
+${fragment}\`
 `
         )
         .join("")}
 ${noRelationsFragments
         .map(
-          ({ name, fragment }) => `
-export const ${name}${this.fragmentType.NO_RELATIONS}Fragment = gql\`${fragment}\`
-`
+          ({ name, fragment }) => fragment ? `
+export const ${name}${this.fragmentType.NO_RELATIONS}Fragment = gql\`
+${fragment}\`
+` : ''
         )
         .join("")}
 ${deepFragments
         .map(
           ({ name, fragment }) => `
-export const ${name}${this.fragmentType.DEEP}Fragment = gql\`${fragment}\`
+export const ${name}${this.fragmentType.DEEP}Fragment = gql\`
+${fragment}\`
 `
         )
         .join("")}
